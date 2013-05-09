@@ -4,11 +4,4 @@ set -e
 
 cd build
 
-app=`find . -name app.py | head -n 1`
-
-if [ -z "$app" ]; then
-	echo "Couldn't locate app.py"
-	exit 1
-fi
-
-python $app
+python manage.py runserver
