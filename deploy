@@ -1,0 +1,14 @@
+#!/bin/sh
+
+BRANCH=${2:-master}
+
+mkdir build
+cd build
+echo "Cloning git repository"
+git clone $1 repo
+git fetch
+cd repo
+git checkout origin/$BRANCH
+echo "Checking out branch $BRANCH"
+echo "Running install script"
+./install.sh
