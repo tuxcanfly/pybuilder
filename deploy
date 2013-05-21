@@ -1,13 +1,15 @@
 #!/bin/sh
 
+# Usage: deploy git@github.com:foo/bar.git dev
+
 BRANCH=${2:-master}
 
 mkdir build
 cd build
 echo "Cloning git repository"
-git clone $1 repo
+git clone $1
 git fetch
-cd repo
+cd `ls`
 git checkout origin/$BRANCH
 echo "Checking out branch $BRANCH"
 echo "Running install script"

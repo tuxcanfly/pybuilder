@@ -1,9 +1,0 @@
-#!/bin/sh
-
-mkdir build
-cd build
-
-curl -L $1 -o dl.tar.gz
-tar -zxvf dl.tar.gz
-
-pip install -r requirements.txt
